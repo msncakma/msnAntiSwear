@@ -1,0 +1,88 @@
+name: msnAntiSwear
+version: '1.0.0'
+description: Advanced swear detection and prevention plugin for Minecraft
+author: [KULLANICI_ADINIZ]
+website: https://github.com/msncakma/msnAntiSwear
+
+main: com.msnAntiSwear.msnAntiSwear
+api-version: 1.13
+
+# Soft Dependencies (opsiyonel)
+softdepend: [PlaceholderAPI]
+
+# Komutlar
+commands:
+  msnAntiSwear:
+    description: msnAntiSwear ana komutu
+    usage: /<command> [reload|add|remove|list|search|toggle|bypass|stats|update]
+    aliases: [mas]
+    permission: msnAntiSwear.use
+    permission-message: §cBu komutu kullanma izniniz yok!
+
+# İzinler
+permissions:
+  # Ana İzinler
+  msnAntiSwear.bypass:
+    description: Küfür tespitinden muaf olma
+    default: false
+  
+  msnAntiSwear.notify:
+    description: Küfür tespiti bildirimlerini görme
+    default: op
+  
+  msnAntiSwear.use:
+    description: Temel komutları kullanma
+    default: true
+  
+  # Admin İzinleri
+  msnAntiSwear.admin:
+    description: Tüm yönetim komutları
+    default: op
+    children:
+      msnAntiSwear.reload: true
+      msnAntiSwear.add: true
+      msnAntiSwear.remove: true
+      msnAntiSwear.list: true
+      msnAntiSwear.search: true
+      msnAntiSwear.toggle: true
+      msnAntiSwear.bypass.others: true
+      msnAntiSwear.stats: true
+      msnAntiSwear.update: true
+      msnAntiSwear.notify: true
+  
+  # Spesifik İzinler
+  msnAntiSwear.reload:
+    description: Konfigürasyonu yeniden yükleme
+    default: op
+  
+  msnAntiSwear.add:
+    description: Yeni küfür ekleme
+    default: op
+  
+  msnAntiSwear.remove:
+    description: Küfür kaldırma
+    default: op
+  
+  msnAntiSwear.list:
+    description: Küfür listesini görme
+    default: op
+  
+  msnAntiSwear.search:
+    description: Küfür arama
+    default: op
+  
+  msnAntiSwear.toggle:
+    description: Küfür aktif/pasif yapma
+    default: op
+  
+  msnAntiSwear.bypass.others:
+    description: Başkalarına bypass verme
+    default: op
+  
+  msnAntiSwear.stats:
+    description: İstatistikleri görme
+    default: op
+  
+  msnAntiSwear.update:
+    description: Güncelleme kontrolü
+    default: op
